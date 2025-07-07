@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片转PDF工具</title>
+    <!-- 图标设置 -->
+    <link rel="icon" href="assets/icons/pdf-icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icons/pdf-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 引入PDF库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container" id="dropZone">
+        <div class="header">
+            <h1>PDF图片裁剪工具</h1>
+        </div>
+        
+        <div class="file-list" id="fileList">
+            <!-- 文件列表将通过JavaScript动态添加 -->
+        </div>
+        
+        <div class="add-section">
+            <button class="add-btn" id="addButton">+</button>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+            <p class="drag-hint">拖放图片到此处</p>
+        </div>
+        
+        <div class="button-container">
+            <div class="open-dir-btn-container">
+                <button class="open-dir-btn" id="openDirBtn">打开保存位置</button>
+            </div>
+            <div class="button-group">
+                <button class="action-btn" id="importBtn">导入</button>
+                <button class="action-btn primary-btn" id="savePdfBtn">转为PDF</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 加载状态指示器 -->
+    <div id="loading-indicator" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9999;">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background-color:white; padding:20px; border-radius:5px; text-align:center;">
+            <div id="loading-message">处理中...</div>
+        </div>
+    </div>
+    
+    <!-- 引入核心模块，注意顺序 -->
+    <script src="FileValidator.js"></script>
+    <script src="ImageProcessor.js"></script>
+    <script src="PDFGenerator.js"></script>
+    <script src="UIManager.js"></script>
+    <script src="DragDropHandler.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

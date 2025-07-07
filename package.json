@@ -1,0 +1,30 @@
+{
+  "name": "pdf-image-cutter",
+  "main": "index.html",
+  "window": {
+    "title": "PDF图片裁剪工具",
+    "icon": "./image (4).ico",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 600,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 300,
+    "resizable": true,
+    "show_in_taskbar": true,
+    "fullscreen": false
+  },
+  "manifestUrl": "package.json",
+  "webkit": {
+    "plugin": true
+  },
+  "icons": {
+    "16": "./image (4).ico",
+    "32": "./image (4).ico",
+    "48": "./image (4).ico",
+    "64": "./image (4).ico",
+    "128": "./image (4).ico",
+    "256": "./image (4).ico"
+  }
+}

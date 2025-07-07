@@ -1,0 +1,211 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 容器样式 */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    height: 90vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* 文件列表样式 */
+.file-list {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.file-list:empty::after {
+    content: '没有文件';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    grid-column: 1 / -1;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* 文件项样式 */
+.file-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.file-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.file-preview {
+    height: 120px;
+    background-color: #f9f9f9;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-actions {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-remove {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.file-remove:hover {
+    background-color: #e53935;
+}
+
+/* 添加区域样式 */
+.add-section {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #43a047;
+}
+
+.drag-hint {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* 按钮容器 */
+.button-container {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.primary-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: 1px solid #3949ab;
+}
+
+.primary-btn:hover {
+    background-color: #3949ab;
+}
+
+/* 打开目录按钮 */
+.open-dir-btn {
+    background-color: transparent;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 0.85rem;
+}
+
+.open-dir-btn:hover {
+    color: #333;
+}
